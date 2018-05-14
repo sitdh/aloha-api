@@ -1,0 +1,2 @@
+2018/05/14 20:04:58 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.31.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.31.0.2:9000", host: "localhost"
+2018/05/14 20:06:29 [error] 5#5: *3 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.31.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.31.0.2:9000", host: "localhost"
