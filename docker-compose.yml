@@ -1,11 +1,13 @@
 version: '3.3'
 services:
   fpm:
-    build: ./aloha-app
+    image: sitdh/php-fpm:latest 
     volumes:
       - ./aloha-app:/var/www/html
     networks:
       - aloha
+    expose: 
+      - "9000"
 
   nginx:
     image: nginx:alpine
