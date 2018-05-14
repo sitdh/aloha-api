@@ -1,0 +1,37 @@
+version: '3'
+services:
+  fpm:
+    image: sitdh/php-fpm:latest
+  volumes:
+    - ./aloha-app:/var/www/html
+  networks:
+    - aloha
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./aloha-app:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - aloha
+
+  db:
+    from: mariadb:10.3
+    restart: always
+    volumes:
+      - ./datasource/property_data.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: aloha
+      MYSQL_DATABASE: aloha
+      MYSQL_USER: aloha
+      MSYQL_PASSWORD: aloha
+    networks:
+      - aloha
+    depends_on:
+      - fpm
+
+networks:
+  - aloha
