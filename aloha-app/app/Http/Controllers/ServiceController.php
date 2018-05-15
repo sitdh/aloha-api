@@ -74,7 +74,7 @@ class ServiceController extends Controller
 
     $queryResult = $result->get();
 
-    return count($queryResult);
+    return $queryResult;
   }
 
   private function simpleConditions($tableResource, $q, $v) {
