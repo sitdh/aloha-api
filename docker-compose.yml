@@ -24,17 +24,15 @@ services:
       - aloha
 
   db:
-    image: mariadb:10.3 
+    build: ./datasource
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: aloha
-      MYSQL_DATABASE: aloha
-      MYSQL_USER: aloha
-      MSYQL_PASSWORD: aloha
+      MYSQL_ROOT_PASSWORD: guava
+      MYSQL_DATABASE: guava
+      MYSQL_USER: guava
+      MSYQL_PASSWORD: guava
     depends_on:
       - fpm
-    volumes:
-      - ./datasource:/docker-entrypoint-initdb.d
     networks:
       - aloha
     ports:
