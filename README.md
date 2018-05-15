@@ -26,6 +26,8 @@ $ docker-compose up -d --build
 $ docker exec -it aloha-api\_fpm\_1 php composer.phar install
 ```
 
+Open [localhost](http://localhost) to preview application
+
 ## Script fixing
 1. Change `DROP TABLE properties` to `DROP TABLE IF EXISTS properties` to prevent error.
 1. Run `sed` to convert string to date
