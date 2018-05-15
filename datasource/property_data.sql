@@ -1,4 +1,4 @@
-DROP TABLE properties;
+DROP TABLE IF EXISTS properties;
 CREATE TABLE properties(
    additional_info   VARCHAR(422) NOT NULL
   ,amenities         VARCHAR(149)
