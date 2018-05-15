@@ -10,7 +10,7 @@
   - Simple condition: `key=value` is converted to `key [op] 'value'`
   - Range condition: `key=min-max` is converted to `key between (min, max)`
 2. Multiple params can be performed: 
-  - `key1=value1&key2=value2` is converted to `key1 [op] 'value1' AND key1 [op] 'value2'`
+  - `key1=value1&key2=value2` is converted to `key1 [op] 'value1' AND key2 [op] 'value2'`
 3. Data was returned in JSON format
 
 ## Instructions
@@ -23,7 +23,7 @@ $ docker-compose up -d --build
 
 # http://localhost still broken, 
 # please run command below to install dependency packages 
-# aloha-api = Folder name, fpm = service name.
+# aloha-api = Folder name, fpm = service name. So, image should be aloha-api_fpm_1
 $ docker exec -it aloha-api_fpm_1 php composer.phar install
 ```
 
