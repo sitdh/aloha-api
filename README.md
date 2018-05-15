@@ -6,9 +6,9 @@
 1. User `/search` endpoint to search information
   - Simple condition: `key=value` is converted to `key [op] 'value'`
   - Range condition: `key=min-max` is converted to `key between (min, max)`
-1. Multiple params can be performed: 
+2. Multiple params can be performed: 
   - `key1=value1&key2=value2` is converted to `key1 [op] 'value1' AND key1 [op] 'value2'`
-1. Data was returned in JSON format
+3. Data was returned in JSON format
 
 ## Instructions
 ```bash
