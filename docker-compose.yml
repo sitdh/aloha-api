@@ -24,10 +24,8 @@ services:
       - aloha
 
   db:
-    image: mariadb:10.3
+    image: mariadb:10.3 
     restart: always
-    volumes:
-      - ./datasource/property_data.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       MYSQL_ROOT_PASSWORD: aloha
       MYSQL_DATABASE: aloha
@@ -35,8 +33,12 @@ services:
       MSYQL_PASSWORD: aloha
     depends_on:
       - fpm
+    volumes:
+      - ./datasource:/docker-entrypoint-initdb.d
     networks:
       - aloha
+    ports:
+      - 3306:3306
 
 networks:
   aloha:
