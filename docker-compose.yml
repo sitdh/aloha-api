@@ -4,6 +4,7 @@ services:
     image: sitdh/php-fpm:latest 
     volumes:
       - ./aloha-app:/var/www/html
+      - ./aloha-app/vendor:/clover/vendor
     networks:
       - aloha
     expose: 
