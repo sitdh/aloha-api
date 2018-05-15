@@ -23,7 +23,8 @@ $ docker-compose up -d --build
 
 # http://localhost still broken, 
 # please run command below to install dependency packages 
-$ docker exec -it aloha-api\_fpm\_1 php composer.phar install
+# aloha-api = Folder name, fpm = service name.
+$ docker exec -it aloha-api_fpm_1 php composer.phar install
 ```
 
 Open [localhost](http://localhost) to preview application
